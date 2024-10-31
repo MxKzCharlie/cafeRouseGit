@@ -3,7 +3,7 @@ export const sendOrderPickUp = async (dataClient, order) => {
     console.log(order);
     
     try {
-        const response = await fetch('http://localhost:5000/api/twilio/send-sms-pickup', {
+        const response = await fetch('https://cafe-rouse-backend.vercel.app/api/twilio/send-sms-pickup', {
             method: 'POST',
             headers: {
              'Content-Type': 'application/json',
