@@ -240,18 +240,18 @@ export const mockExtras = [
 
 export const card = [
     {
-        info: "Capuccino de vainilla con leche regular y una llovizna de canela grande a tan solo $90",
-        details: ["Capuccino",["Vainilla", "Leche Regular", "Canela","Grande"], 90],
+        info: "Capuccino de vainilla con leche regular y una llovizna de canela grande a tan solo $100",
+        details: ["Capuccino",["Vainilla", "Leche Regular", "Canela","Grande"], 100],
         img: "",
     },
     {
-        info: "Latte de amaretto con leche deslactosada mediano a tan solo $85",
-        details: ["Latte", ["Amaretto", "Deslactosada", "Mediano"], 85],
+        info: "Latte de amaretto con leche deslactosada mediano a tan solo $94",
+        details: ["Latte", ["Amaretto", "Deslactosada", "Mediano"], 94],
         img: "",
     },
     {
-        info: "Frappe de Oreo Grande con leche regular venti a tan solo $110",
-        details: ["Frappe", ["Oreo", "Venti", "Leche Regular"], 110],
+        info: "Frappe de Oreo Venti con leche regular a tan solo $113",
+        details: ["Frappe", ["Oreo", "Venti", "Leche Regular"], 113],
         img: "",
     },
 ]
