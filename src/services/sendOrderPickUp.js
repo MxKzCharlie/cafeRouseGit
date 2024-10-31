@@ -23,7 +23,7 @@ export const sendOrderPickUp = async (dataClient, order) => {
         }
 
     }catch(error){
-        alert('No se envio el mensaje, intentelo mas tarde');
+        alert('Error en el servidor, intentelo mas tarde');
         console.log('Error en el servidor', error);
     }
 };
