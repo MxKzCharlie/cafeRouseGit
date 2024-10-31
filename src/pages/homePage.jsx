@@ -1,6 +1,6 @@
 import HeaderV2 from "../components/HeaderV2"
 import ContentV2 from "../components/homePage/ContentV2"
-import Footer from "../components/footer"
+import Footer from "../components/Footer"
 import { MenuContext } from '../utils/Contexts'
 import { useMenu } from "../hooks/globalStates";
 
