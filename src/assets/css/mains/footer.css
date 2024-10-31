@@ -1,0 +1,28 @@
+.container-footer {
+    @apply bg-footer w-full h-auto text-light flex flex-col items-center
+    sm:grid sm:grid-cols-3;
+}
+
+.container-info-events {
+    @apply flex flex-col items-center pt-4 gap-3
+    ;
+}
+
+.sub-container-info-events {
+    @apply flex flex-row justify-center gap-2
+    sm:my-6 ;
+}
+
+.copyright-sm {
+    @apply block mt-4 text-center
+    sm:hidden;
+}
+
+.copyright {
+    @apply hidden text-center
+    sm:block;
+}
+
+.container-social-media {
+    @apply flex flex-col items-center justify-evenly gap-2;
+}

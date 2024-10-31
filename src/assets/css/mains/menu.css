@@ -1,0 +1,12 @@
+.container-menu {
+    @apply w-4/6 h-full bg-footer flex flex-col items-center text-light text-xl font-titles
+    sm:w-1/4;
+}
+
+.option-menu {
+    @apply ease-in-out transition-transform hover:scale-125 m-4 duration-200 text-center;
+}
+
+.close-menu-button{
+    @apply mt-8 ease-in transition-colors hover:bg-[#553925] rounded-full p-4 cursor-pointer;
+}

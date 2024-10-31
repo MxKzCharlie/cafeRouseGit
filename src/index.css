@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+
+.flexCol-itCenter {
+    @apply flex flex-col items-center;
+}
+
+@tailwind utilities;

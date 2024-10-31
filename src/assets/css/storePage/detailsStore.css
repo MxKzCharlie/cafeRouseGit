@@ -1,0 +1,54 @@
+.details-container {
+    @apply w-full h-auto max-h-[200rem] bg-bgWhite relative my-6 rounded-xl flex flex-col 
+    items-center overflow-y-auto
+    sm:w-[48rem];
+}
+
+.container-button-close {
+    @apply absolute mx-6 my-3 rounded-full bg-gray-400 hover:bg-gray-300 p-3 -left-3
+    sm:my-6 sm:mx-6;
+}
+
+.img-button-close {
+    @apply w-4 h-4
+    sm:w-8 sm:h-8;
+}
+
+.container-presentation {
+    @apply w-full h-auto flex flex-col items-center my-0 
+    sm:my-6;
+}
+
+.infoSm {
+    @apply w-full h-auto font-general text-gray-500 flex justify-center items-center text-center px-4
+    sm:hidden; 
+}
+
+.container-title-detail {
+    @apply w-full h-auto flex flex-col items-center 
+    sm:px-12 sm:flex-row sm:justify-center;
+}
+
+.title-hr {
+    @apply w-64 h-1 bg-[#3E2723] rounded-3xl
+    sm:w-full;
+}
+
+.title-detail {
+    @apply font-titles2 text-3xl mx-10 text-center;
+}
+
+.container-option-detail {
+    @apply w-full h-auto flex flex-row flex-wrap my-3
+    sm:px-12;
+}
+
+.details-inputNumber {
+    @apply w-10 border-solid border-2 border-accent rounded-xl 
+    text-center focus:border-double focus:border-accent focus:outline-none;
+}
+
+.container-detail {
+    @apply w-1/2 h-auto flex flex-row items-center my-1 px-4 gap-1
+    sm:w-1/3;
+}

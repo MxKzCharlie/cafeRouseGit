@@ -1,0 +1,9 @@
+.car-container {
+    @apply indicator w-auto h-12 flex flex-row items-center cursor-pointer my-2
+    sm:right-20 sm:absolute sm:my-0;
+}
+
+.title{
+    @apply text-2xl
+    sm:hidden;
+}

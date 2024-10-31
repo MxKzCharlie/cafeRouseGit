@@ -1,0 +1,10 @@
+.hover-gradient {
+    background-size: 100% 300%;
+    background-position: bottom;
+    transition: background-position 3s ease;
+}
+
+.hover-gradient:hover {
+    background-position: top;
+}
+

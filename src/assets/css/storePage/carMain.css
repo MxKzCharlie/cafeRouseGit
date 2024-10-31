@@ -1,0 +1,68 @@
+.container-main {
+    @apply w-full h-full flex flex-col mt-5 relative
+    xl:flex-row ;
+}
+
+.container-products-car-and-payment {
+    @apply w-full h-auto flex-col items-start p-5
+    xl:w-1/2;
+}
+
+.container-paymentSection {
+    @apply w-full h-auto flex-col items-start p-5
+    xl:w-1/2 
+}
+
+.note {
+    @apply w-full h-auto flex justify-center text-center text-gray-500
+}
+
+.delete-button {
+    @apply indicator-item bg-gray-400 hover:bg-hoverSelect rounded-full p-1 opacity-100 remove
+    xl:opacity-0;
+}
+
+.remove-container:hover .remove {
+    opacity: 1;
+}
+
+.img-product-car {
+    @apply hidden
+    sm:h-2/3 sm:w-auto sm:block;
+}
+
+.title-product-car {
+    @apply text-xl font-general h-full w-auto flex items-center
+    sm:text-3xl;
+}
+
+.container-form {
+    @apply w-11/12 h-auto flex flex-col items-center gap-3 font-general py-4 border-solid border-2 rounded-3xl
+    border-secondary bg-gray-300
+    sm:w-2/3;
+}
+
+.select-delegation {
+    @apply w-full h-8 text-center rounded-lg border-solid border-2 border-black font-general;
+}
+
+.container-input {
+    @apply w-11/12 h-auto flex flex-col items-center
+    sm:w-5/6 
+}
+
+.inputs-paymentSection {
+    @apply w-full h-8 input input-bordered input-secondary text-center;
+}
+
+.span-pickUp {
+    @apply w-full h-auto flex justify-center items-center text-center
+}
+
+.select-delegation-options {
+    @apply w-2/3 h-auto;
+}
+
+.label-typeDelivery{
+    @apply flex justify-center items-center cursor-pointer gap-1 font-general;
+}

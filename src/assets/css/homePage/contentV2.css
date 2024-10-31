@@ -1,0 +1,39 @@
+.img-banner {
+    @apply h-[40rem] w-full bg-testBanner bg-cover bg-bottom
+    sm:bg-banner sm:bg-center;
+}
+
+.container-banner-title {
+    @apply flex flex-col items-center h-full text-light w-full 
+    sm:w-1/2 sm:justify-center;
+}
+
+.banner-title {
+    @apply font-titles w-2/3 h-auto text-center text-5xl mt-14
+    sm:text-8xl sm:w-3/4 sm:mt-0;
+}
+
+.banner-button {
+    @apply btn btn-accent my-4 flex justify-center items-center flex-wrap text-lg
+    sm:text-2xl;
+}
+
+.container-info {
+    @apply w-full h-auto py-6 flex flex-col-reverse items-center gap-6 text-customBlack
+    sm:flex-row sm:p-6 ;
+}
+
+.container-info-img {
+    @apply w-full h-full flex flex-col items-center items-end 
+    sm:px-24 sm:w-1/2 sm:justify-center;
+}
+
+.info-img {
+    @apply w-2/3 h-auto rounded-xl
+    sm:w-96; 
+}
+
+.container-info-paragraph {
+    @apply w-3/4 h-full flex flex-col items-start justify-center
+    sm:w-1/2 ;
+}

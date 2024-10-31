@@ -1,0 +1,16 @@
+.container-nav {
+    @apply w-full h-auto flex flex-row justify-center flex-wrap font-titles text-customBlack mt-6
+    sm:flex-nowrap sm:items-center sm:h-32;
+}
+
+.container-category-nav {
+    @apply w-1/2 h-auto flex justify-center items-center p-5
+    sm:w-1/4 sm:h-full;
+}
+
+.category-container {
+    @apply w-auto h-auto bg-transparent flex justify-center p-4 shadow-navShadow
+    items-center text-center text-3xl cursor-pointer rounded-3xl relative
+    sm:text-2xl
+    lg:hover:shadow-navShadow lg:shadow-none lg:text-3xl;
+}

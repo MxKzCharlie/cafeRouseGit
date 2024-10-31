@@ -1,0 +1,31 @@
+.container-options-store {
+    @apply flex flex-row flex-wrap justify-center p-6 gap-6;
+}
+
+.container-option {
+    @apply w-[8rem] h-[7rem] relative z-20
+    sm:w-56 sm:h-24;
+}
+
+.container-info-hover-option {
+    @apply w-[8rem] h-[7rem] text-center bg-[#3E2723] z-10 rounded-3xl absolute
+    flex justify-center items-center transition-transform transform duration-500
+    sm:w-56 sm:h-24;
+}
+
+.info-hover-option {
+    @apply text-light opacity-0
+    sm:opacity-100;
+}
+
+.container-title-option {
+    @apply w-[8rem] h-[7rem] bg-bgWhite font-titles2 z-[15] font-semibold flex justify-center items-center cursor-pointer
+    shadow-cardShadow rounded-3xl outline text-center outline-2 outline-[#FAFAFA] transition-colors duration-500
+  hover:bg-hoverSelect absolute
+    sm:w-56 sm:h-24;
+}
+
+.title-option {
+    @apply text-lg
+    sm:text-2xl;
+}
