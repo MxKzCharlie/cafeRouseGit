@@ -8,7 +8,7 @@ export const mockHot = [
     [
         "Americano Expresso", 
         "Delicioso cafe de Oaxaca mezclado con agua caliente, preparado a su gusto.", 
-        [1, 2, 3, 9,18],
+        [1, 2, 3, 9, 18],
         [ 58, 63, 73, 78 ],
     ],
     [
@@ -62,7 +62,7 @@ export const mockHot = [
     [
         "Tisana", 
         "Una bebida ideal para relajarse en cualquier momento del dia, con frutos dentro de tu bebida!", 
-        [1, 7, 20],
+        [1, 7, 19],
         [ 73, 78, 84, 104 ],
     ],
     [
@@ -80,7 +80,7 @@ export const mockHot = [
     [
         "Cortado", 
         "Bebidas corta de 8 onzas, contiene cantidad de shot puro de expresso y 1 onza de leche cremada.", 
-        [22, 3],
+        [21, 3],
     ],
 ];
 
@@ -96,6 +96,12 @@ export const mockCold =[
         "Expresso de Oaxaca puro preparado a tu gusto.", 
         [0, 2, 3, 9, 18],
         [ 58, 63, 73, 84, 94 ],
+    ],
+    [
+        "Ice Cafe D´Olla", 
+        "Una deliciosa bebida historica mexicana, combinacion de especias y cafe fresco de chiapas. Un sabor dulce único.",
+        [0, 3, 18],
+        [ 56, 61, 65, 73, 84 ],
     ],
     [
         "Cold Brew", 
@@ -205,12 +211,12 @@ export const mockBakery = [
     [
         "Donas", 
         "Añade donas y descubre el sabor", 
-        [21],
+        [20],
     ],
     [
         "Strudel De Manzana", 
         "Delicioso sabor dulce y único",
-        [21],
+        [20],
     ],
     [
         "Muffin", 
@@ -481,17 +487,6 @@ export const data = [
         ],
         input: "number",
         required: "false",
-    },
-    {
-        id: "tipos-de-cafe-iceCoffe",
-        title: "Tipo de Café",
-        options: [
-            ["Normal", 0],
-            ["Descafeinado", 0],
-            ["D´Olla", 0],
-        ],
-        input: "radio",
-        required: "true",
     },
     {
         id: "complementos-tisana",
