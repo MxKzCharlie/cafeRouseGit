@@ -1,5 +1,5 @@
 import HeaderV2 from "../components/HeaderV2"
-import Footer from "../components/footer"
+import Footer from "../components/Footer"
 import Car from "../components/storePage/car"
 import { MenuContext, CarContext } from '../utils/Contexts'
 import { useMenu, useCar } from "../hooks/globalStates"
