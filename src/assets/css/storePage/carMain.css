@@ -28,11 +28,11 @@
 
 .img-product-car {
     @apply hidden
-    sm:h-2/3 sm:w-auto sm:block;
+    sm:h-20 sm:w-auto sm:block;
 }
 
 .title-product-car {
-    @apply text-xl font-general h-full w-auto flex items-center
+    @apply text-xl font-general h-auto w-full flex items-center justify-center 
     sm:text-3xl;
 }
 

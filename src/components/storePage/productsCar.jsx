@@ -33,22 +33,23 @@ function ProductsCar() {
                 Total = ${total}
             </div>
             {count.map(product => (
-                <div className="w-full h-auto flexCol-itCenter px-4 py-2 relative indicator remove-container">
+                <div className="w-full h-auto flexCol-itCenter px-2 py-3 relative indicator remove-container">
                     <button className="delete-button"
                      onClick={() => handleRemove(product)} >
                         <img src={cruz} alt="cerrar" className="w-5 h-5" />
                     </button>
-                    <div className="w-full h-20 flex flex-row gap-4 items-center justify-between">
-                        <div className="w-full h-20 flex flex-row gap-4 items-center">
-                            <img src={taza} alt="taza" className="img-product-car" />
+                    <div className="w-full h-auto flex flex-row items-center justify-between">
+                        <img src={taza} alt="taza" className="img-product-car" />
+                        <div className="w-full h-full flex flex-col gap-1 items-center">    
                             <h3 className="title-product-car">{product[0]}</h3>
-                            <div className="w-2/4 h-full flex flex-row flex-wrap justify-start items-center text-center">
+                            <div className="w-full h-auto flex flex-row flex-wrap justify-center items-center text-center">
                             {
                                 product[1].map(detail => <p>{`${detail}, `}</p>)
                             }
                             </div>
                         </div>
-                        <span className="h-full w-auto flex justify-center items-center text-4xl">
+                        <span className="h-full w-auto flex justify-center items-center text-2xl
+                        sm:text-4xl">
                             ${product[product.length - 1]}
                         </span>
                     </div>
