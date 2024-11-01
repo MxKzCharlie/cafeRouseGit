@@ -12,6 +12,7 @@ function StorePage() {
     const {menu, setMenu} = useMenu();
     const {count, setCount} = useCar();
     const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
+    console.log(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
     return (
         <CarContext.Provider value={{count, setCount}}>
