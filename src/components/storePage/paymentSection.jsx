@@ -56,7 +56,9 @@ function PaymentSection() {
                 "Pago": "Pendiente...",
             });
 
-            if(sendOrderPickUp(dataClient, count)){
+            const finish = sendOrderPickUp(dataClient, count);
+
+            if(finish){
                 navigate("/");
             }
         }else{
