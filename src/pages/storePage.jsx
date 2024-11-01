@@ -1,5 +1,6 @@
 import HeaderV2 from '../components/HeaderV2'
 import Footer from '../components/Footer'
+import { useState } from 'react'
 import { Outlet } from 'react-router-dom'
 import { useMenu, useCar } from '../hooks/globalStates'
 import { MenuContext, CarContext } from '../utils/Contexts'
@@ -11,9 +12,21 @@ import '../assets/css/storePage/storePage.css'
 function StorePage() {
     const {menu, setMenu} = useMenu();
     const {count, setCount} = useCar();
-    const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
-    console.log(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
+    const [stripePromise, setStripePromise] = useState(null);
 
+    useEffect(() => {
+        const loadStripeKey = async () => {
+            const stripe = await loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
+            setStripePromise(stripe);
+        };
+
+        if (process.env.REACT_APP_STRIPE_PUBLIC_KEY) {
+            loadStripeKey();
+        } else {
+            console.error("La clave pública de Stripe no está definida.");
+        }
+    }, []);
+    
     return (
         <CarContext.Provider value={{count, setCount}}>
             <MenuContext.Provider value={{menu, setMenu}}>
