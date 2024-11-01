@@ -72,8 +72,8 @@ function DetailsStore() {
     const handleOrder = (event) => {
         event.preventDefault();
 
-        if(total === 0){
-            return null
+        if(price === 0){
+            return null;
         }
 
         let order = [];
