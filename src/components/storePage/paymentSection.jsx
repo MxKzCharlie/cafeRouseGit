@@ -19,8 +19,7 @@ function PaymentSection() {
         setDataClient({
             ...dataClient,
             [e.target.name]: e.target.value,
-        })
-        console.log(dataClient);
+        });
     };
 
     useEffect(() => {
@@ -48,7 +47,7 @@ function PaymentSection() {
             
             setDataClient({
                 ...dataClient,
-                "Pago": "Pendiente",
+                "Pago": "Pendiente...",
             })
 
             sendOrderDelivery(dataClient, count);
@@ -59,7 +58,7 @@ function PaymentSection() {
 
             setDataClient({
                 ...dataClient,
-                "Pago": "Realizado",
+                "Pago": "Realizado ✅",
             });
             
             sendOrderDelivery(dataClient, count);

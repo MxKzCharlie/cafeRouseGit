@@ -1,6 +1,6 @@
 export const sendOrderDelivery = async (dataClient, order) => {
     try {
-        const response = await fetch('http://localhost:5000/api/twilio/send-sms-delivery', {
+        const response = await fetch('https://cafe-rouse-backend.vercel.app/api/twilio/send-sms-delivery', {
             method: 'POST',
             headers: {
              'Content-Type': 'application/json',
@@ -20,7 +20,7 @@ export const sendOrderDelivery = async (dataClient, order) => {
         }
 
     }catch(error){
-        alert('No se envio el mensaje, intentelo mas tarde');
+        alert('Error en el servidor, intentelo mas tarde');
         console.log('Error en el servidor', error);
     }
 };
