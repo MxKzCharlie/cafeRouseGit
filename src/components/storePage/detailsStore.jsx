@@ -151,10 +151,10 @@ function DetailsStore() {
                 </div>
                 <div className="w-full h-auto p-8 flex flex-row justify-between items-center">
                     <span className="font-normal text-xl">Total = ${price}</span>
-                        <button type="submit" 
-                        className="btn btn-accent text-lg font-normal">
-                            Añadir al carrito
-                        </button>
+                    <button type="submit" 
+                    className="btn btn-accent text-lg font-normal">
+                        Añadir al carrito
+                    </button>
                 </div>
             </form>
         </div>

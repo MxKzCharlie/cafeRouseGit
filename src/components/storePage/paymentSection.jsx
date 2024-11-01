@@ -3,11 +3,13 @@ import { CarContext, TotalContext } from "../../utils/Contexts"
 import { dataAdress } from '../../services/api'
 import { sendOrderPickUp } from "../../services/sendOrderPickUp"
 import { sendOrderDelivery } from "../../services/sendOrderDelivery"
+import { sendStripe } from "../../services/sendStripe"
 import InputMask from "react-input-mask"
 
 function PaymentSection() {
     const [section, setSection] = useState(0);
     const [dataClient, setDataClient] = useState({});
+    const [cash, setCash] = useState(null);
     const {count, setCount} = useContext(CarContext);
     const {total, setTotal } = useContext(TotalContext);
     const [disabled, setDisabled] = useState({
@@ -39,7 +41,9 @@ function PaymentSection() {
         sendOrderPickUp(dataClient, count);
     };
 
-    const handlePaymentDelivery = (cash) => {
+    const handlePaymentDelivery = (event) => {
+        event.preventDefault();
+
         if(cash){
             if(total === 0){
                 return null;
@@ -48,7 +52,7 @@ function PaymentSection() {
             setDataClient({
                 ...dataClient,
                 "Pago": "Pendiente...",
-            })
+            });
 
             sendOrderDelivery(dataClient, count);
         }else{
@@ -56,19 +60,20 @@ function PaymentSection() {
                 return null;
             };
 
+            
             setDataClient({
                 ...dataClient,
                 "Pago": "Realizado ✅",
             });
-            
-            sendOrderDelivery(dataClient, count);
+            sendStripe(dataClient.total);
+            //sendOrderDelivery(dataClient, count);
         }
     };
 
     const sectionContent = () => {
         if (section === 0 && disabled.toggle === false){
             return (
-                <div className="container-form">
+                <form onSubmit={handlePaymentDelivery} className="container-form">
                     <label className="container-input">
                         Nombre: 
                         <input name="Nombre" onChange={handleChange}
@@ -77,7 +82,8 @@ function PaymentSection() {
                     </label>
                     <label className="container-input">
                         Num. Para Contactarlo
-                        <InputMask mask="+99 999-999-9999" placeholder="+XX XXX-XXX-XXXX" className="inputs-paymentSection"
+                        <InputMask mask="+99 999-999-9999" placeholder="+XX XXX-XXX-XXXX" 
+                        className="inputs-paymentSection"
                         onChange={handleChange} name="Numero" required>
                             {(inputProps) => <input {...inputProps} type="tel"/>}    
                         </InputMask>
@@ -108,15 +114,15 @@ function PaymentSection() {
                         placeholder="Ingrese su Direccion" required
                         type="text" className="inputs-paymentSection" />
                     </label>
-                    <button onClick={() => handlePaymentDelivery(false)}
+                    <button onClick={() => setCash(false)}
                     type="submit" className="btn btn-secondary text-light">
                         Pago en Línea
                     </button>
-                    <button onClick={() => handlePaymentDelivery(true)}
+                    <button onClick={() => setCash(true)}
                     type="submit" className="btn btn-secondary text-light">
                         Pago en Efectivo
                     </button>
-                </div>
+                </form>
             );
         }
         return (
