@@ -1,4 +1,4 @@
-export const sendOrderPickUp = async (dataClient, order, navigate) => {
+export const sendOrderPickUp = async (dataClient, order) => {
     try {
         const response = await fetch('https://cafe-rouse-backend.vercel.app/api/twilio/send-sms-pickup', {
             method: 'POST',
@@ -14,10 +14,11 @@ export const sendOrderPickUp = async (dataClient, order, navigate) => {
         const result = await response.json();
         if(result.success){
             alert('Mensaje enviado con exito, sera redirigido al inicio');
-            navigate("/");
+            return true;
         }else {
             alert('No se envio el mensaje, intentelo mas tarde');
             console.log('Error al enviar el mensaje');
+            return false;
         }
 
     }catch(error){
