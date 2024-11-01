@@ -524,6 +524,5 @@ export const dataAdress = [
     ['Centro', 0],
     ['Otay Centenario', 0],
     ['La Mesa', 0],
-    ['Sánchez Taboada', 0],
     ['Cerro Colorado', 0],
 ]
