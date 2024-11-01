@@ -38,6 +38,14 @@ function DetailsStore() {
     }
 
     const handleQuantity = (e, id, price, max) => {
+        const value = parseInt(e.target.value, 10);
+        
+        if (value > 4) {
+            e.target.value = 4;
+        } else if (value < 0) {
+            e.target.value = 0;
+        }
+
         setQuantity({
             ...quantity,
             [id]: [e.target.value, price, max] 
