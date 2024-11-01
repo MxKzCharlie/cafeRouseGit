@@ -1,4 +1,5 @@
 import { useState, useContext, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 import { CarContext, TotalContext } from "../../utils/Contexts"
 import { dataAdress } from '../../services/api'
 import { sendOrderPickUp } from "../../services/sendOrderPickUp"
@@ -12,6 +13,7 @@ function PaymentSection() {
     const [cash, setCash] = useState(null);
     const {count, setCount} = useContext(CarContext);
     const {total, setTotal } = useContext(TotalContext);
+    const navigate = useNavigate();
     const [disabled, setDisabled] = useState({
         "style": {cursor: "default", color: "gray"},
         "toggle": true,
@@ -54,7 +56,7 @@ function PaymentSection() {
                 "Pago": "Pendiente...",
             });
 
-            sendOrderPickUp(dataClient, count);
+            sendOrderPickUp(dataClient, count, navigate);
         }else{
             if(total === 0){
                 return null;
@@ -65,6 +67,7 @@ function PaymentSection() {
                 ...dataClient,
                 "Pago": "Realizado ✅",
             });
+            
             sendStripe(dataClient.total);
             //sendOrderDelivery(dataClient, count);
         }

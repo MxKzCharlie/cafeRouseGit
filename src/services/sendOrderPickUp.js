@@ -1,8 +1,4 @@
-import { useNavigate } from "react-router-dom"
-
-export const sendOrderPickUp = async (dataClient, order) => {
-    const navigate = useNavigate();
-
+export const sendOrderPickUp = async (dataClient, order, navigate) => {
     try {
         const response = await fetch('https://cafe-rouse-backend.vercel.app/api/twilio/send-sms-pickup', {
             method: 'POST',
