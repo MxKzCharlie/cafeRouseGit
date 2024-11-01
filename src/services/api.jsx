@@ -118,7 +118,7 @@ export const mockCold =[
     [
         "Mocha En Las Rocas", 
         "Café con chocolate liquido cremoso y dulce.", 
-        [0, 2, 3, 9]
+        [0, 2, 3, 9],
         [ 91, 96, 102, 123, 136 ],
     ],
     [
