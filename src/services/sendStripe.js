@@ -12,7 +12,7 @@ export const sendStripe = async (total) => {
 
         const result = await response.json();
         if(result.url){
-            window.location.href = session.url;
+            window.location.href = result.url;
         }else {
             alert('Error al conectar con metodo de pago');
         }

@@ -16,11 +16,11 @@ function StorePage() {
 
     useEffect(() => {
         const loadStripeKey = async () => {
-            const stripe = await loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
+            const stripe = await loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
             setStripePromise(stripe);
         };
 
-        if (process.env.REACT_APP_STRIPE_PUBLIC_KEY) {
+        if (import.meta.env.VITE_STRIPE_PUBLIC_KEY) {
             loadStripeKey();
         } else {
             console.error("La clave pública de Stripe no está definida.");
