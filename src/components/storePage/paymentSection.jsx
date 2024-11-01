@@ -54,7 +54,7 @@ function PaymentSection() {
                 "Pago": "Pendiente...",
             });
 
-            sendOrderDelivery(dataClient, count);
+            sendOrderPickUp(dataClient, count);
         }else{
             if(total === 0){
                 return null;
