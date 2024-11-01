@@ -1,6 +1,6 @@
 import HeaderV2 from '../components/HeaderV2'
 import Footer from '../components/Footer'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
 import { useMenu, useCar } from '../hooks/globalStates'
 import { MenuContext, CarContext } from '../utils/Contexts'
