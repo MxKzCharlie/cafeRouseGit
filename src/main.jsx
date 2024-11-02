@@ -11,7 +11,7 @@ import Bakery from './components/storePage/bakery'
 import Extras from './components/storePage/extras'
 import CarMain from './components/storePage/carMain'
 import DetailsStore from './components/storePage/detailsStore'
-import RainAnimations from './utils/rainAnimations'
+import ThankYouPage from './pages/thankyouPage'
 import './index.css'
 
 const router = createBrowserRouter([
@@ -69,8 +69,8 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "test/",
-    element: <RainAnimations />,
+    path: "thankyou/",
+    element: <ThankYouPage />,
   },
 ]);
 

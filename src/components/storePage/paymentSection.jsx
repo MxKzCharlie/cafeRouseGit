@@ -43,7 +43,7 @@ function PaymentSection() {
         sendOrderPickUp(dataClient, count);
     };
 
-    const handlePaymentDelivery = (event) => {
+    const handlePaymentDelivery = async (event) => {
         event.preventDefault();
 
         if(cash){
@@ -56,8 +56,8 @@ function PaymentSection() {
                 "Pago": "Pendiente...",
             });
 
-            sendOrderPickUp(dataClient, count);
-            navigate("/tienda/");
+            await sendOrderPickUp(dataClient, count);
+            navigate("/thankyou/");
         }else{
             if(total === 0){
                 return null;
