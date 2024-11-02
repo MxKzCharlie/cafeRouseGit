@@ -56,8 +56,9 @@ function PaymentSection() {
                 "Pago": "Pendiente...",
             });
 
-            await sendOrderPickUp(dataClient, count);
-            navigate("/thankyou");
+            await sendOrderPickUp(dataClient, count).then(() => {
+                navigate("/thankyou");
+            });
         }else{
             if(total === 0){
                 return null;
