@@ -57,7 +57,7 @@ function PaymentSection() {
             });
 
             await sendOrderPickUp(dataClient, count);
-            navigate("/thankyou/");
+            navigate("/thankyou");
         }else{
             if(total === 0){
                 return null;
