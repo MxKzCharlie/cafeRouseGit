@@ -1,3 +1,4 @@
+import { sendOrderDelivery } from "../../services/sendOrderDelivery"
 import { useContext, useEffect } from "react"
 import { DataClientContext, CarContext } from "../../utils/Contexts"
 import { Link } from "react-router-dom"
@@ -6,8 +7,9 @@ function Delivery() {
     const {dataClient, setDataClient} = useContext(DataClientContext);
     const {count, setCount} = useContext(CarContext);
     
-    console.log(dataClient);
-    console.log(count);
+    useEffect(async () => {
+        sendOrderDelivery(dataClient, count);
+    }, []);
     
     return (  
         <div className="h-auto w-full flex flex-col justify-center items-center gap-4 my-28">

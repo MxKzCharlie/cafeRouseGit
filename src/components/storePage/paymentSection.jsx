@@ -23,7 +23,6 @@ function PaymentSection() {
             ...dataClient,
             [e.target.name]: e.target.value,
         });
-        console.log(dataClient);
     };
 
     useEffect(() => {
