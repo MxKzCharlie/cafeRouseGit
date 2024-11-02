@@ -33,14 +33,15 @@ function PaymentSection() {
         })
     }, [total]);
 
-    const handlePaymentPickUp = (event) => {
+    const handlePaymentPickUp = async (event) => {
         event.preventDefault();
         
         if(total === 0){
             return null;
         };
 
-        sendOrderPickUp(dataClient, count);
+        await sendOrderPickUp(dataClient, count);
+        navigate("/thankyou");
     };
 
     const handlePaymentDelivery = async (event) => {
@@ -56,8 +57,6 @@ function PaymentSection() {
                 "Pago": "Pendiente...",
             });
             
-            navigate("/thankyou");
-            const success = await sendOrderPickUp(dataClient, count, navigate);
         }else{
             if(total === 0){
                 return null;
