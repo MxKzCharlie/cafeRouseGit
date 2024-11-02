@@ -55,11 +55,9 @@ function PaymentSection() {
                 ...dataClient,
                 "Pago": "Pendiente...",
             });
-
+            
+            navigate("/thankyou");
             const success = await sendOrderPickUp(dataClient, count, navigate);
-            if(success){
-                navigate("/thankyou");
-            }
         }else{
             if(total === 0){
                 return null;
