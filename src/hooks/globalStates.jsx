@@ -15,3 +15,8 @@ export const useTotal = () => {
     return {total, setTotal};
 };
 
+export const useDataClient = () => {
+    const [dataClient, setDataClient] = useState({});
+    return {dataClient, setDataClient};
+};
+

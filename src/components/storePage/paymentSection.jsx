@@ -1,15 +1,14 @@
 import { useState, useContext, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
-import { CarContext, TotalContext } from "../../utils/Contexts"
+import { CarContext, TotalContext, DataClientContext } from "../../utils/Contexts"
 import { dataAdress } from '../../services/api'
-import { sendOrderPickUp } from "../../services/sendOrderPickUp"
 import { sendOrderDelivery } from "../../services/sendOrderDelivery"
 import { sendStripe } from "../../services/sendStripe"
 import InputMask from "react-input-mask"
 
 function PaymentSection() {
     const [section, setSection] = useState(0);
-    const [dataClient, setDataClient] = useState({});
+    const {dataClient, setDataClient} = useContext(DataClientContext);
     const [cash, setCash] = useState(null);
     const {count, setCount} = useContext(CarContext);
     const {total, setTotal } = useContext(TotalContext);
@@ -24,6 +23,7 @@ function PaymentSection() {
             ...dataClient,
             [e.target.name]: e.target.value,
         });
+        console.log(dataClient);
     };
 
     useEffect(() => {
@@ -40,8 +40,7 @@ function PaymentSection() {
             return null;
         };
 
-        await sendOrderPickUp(dataClient, count);
-        navigate("/thankyou");
+        navigate("/tienda/thankyou/pickup/");
     };
 
     const handlePaymentDelivery = async (event) => {
@@ -57,8 +56,7 @@ function PaymentSection() {
                 "Pago": "Pendiente...",
             });
             
-            await sendOrderDelivery(dataClient, count);
-            navigate("/thankyou");
+            navigate("/tienda/thankyou/delivery/");
         }else{
             if(total === 0){
                 return null;
@@ -69,8 +67,7 @@ function PaymentSection() {
                 "Pago": "Realizado ✅",
             });
             
-            // await sendStripe(dataClient.total);
-            await sendOrderDelivery(dataClient, count);
+            await sendStripe(dataClient.total);
         }
     };
 

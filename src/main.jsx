@@ -12,6 +12,8 @@ import Extras from './components/storePage/extras'
 import CarMain from './components/storePage/carMain'
 import DetailsStore from './components/storePage/detailsStore'
 import ThankYouPage from './pages/thankyouPage'
+import PickUp from './components/thankyouPage/pickUp'
+import Delivery from './components/thankyouPage/delivery'
 import './index.css'
 
 const router = createBrowserRouter([
@@ -66,11 +68,15 @@ const router = createBrowserRouter([
         path: "pagar/",
         element: <CarMain />,
       },
+      {
+        path: "thankyou/",
+        element: <ThankYouPage />,
+        children: [
+          {path: "pickup/", element: <PickUp />},
+          {path: "delivery/", element: <Delivery />},
+        ],
+      },
     ],
-  },
-  {
-    path: "thankyou/",
-    element: <ThankYouPage />,
   },
 ]);
 
