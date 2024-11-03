@@ -13,7 +13,7 @@ export const sendOrderDelivery = async (dataClient, order) => {
 
         const result = await response.json();
         if(result.success){
-            alert('Mensaje enviado con exito');
+            console.log('Mensaje enviado con exito');
         }else {
             alert('No se envio el mensaje, intentelo mas tarde');
             console.log('Error al enviar el mensaje');

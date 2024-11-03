@@ -14,6 +14,7 @@ import DetailsStore from './components/storePage/detailsStore'
 import ThankYouPage from './pages/thankyouPage'
 import './index.css'
 
+
 const router = createBrowserRouter([
   {
     path: "/",
