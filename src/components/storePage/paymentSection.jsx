@@ -2,6 +2,7 @@ import { useState, useContext, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { CarContext, TotalContext, DataClientContext } from "../../utils/Contexts"
 import { dataAdress } from '../../services/api'
+import { sendOrderPickUp } from "../../services/sendOrderPickUp"
 import { sendOrderDelivery } from "../../services/sendOrderDelivery"
 import { sendStripe } from "../../services/sendStripe"
 import InputMask from "react-input-mask"
@@ -39,7 +40,8 @@ function PaymentSection() {
             return null;
         };
 
-        navigate("/tienda/thankyou/pickup/");
+        await sendOrderPickUp(dataClient, count);
+        navigate("/tienda/thankyou/");
     };
 
     const handlePaymentDelivery = async (event) => {
@@ -55,7 +57,8 @@ function PaymentSection() {
                 "Pago": "Pendiente...",
             });
             
-            navigate("/tienda/thankyou/delivery/");
+            await sendOrderDelivery(dataClient, count);
+            navigate("/tienda/thankyou/");
         }else{
             if(total === 0){
                 return null;

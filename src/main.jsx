@@ -71,10 +71,6 @@ const router = createBrowserRouter([
       {
         path: "thankyou/",
         element: <ThankYouPage />,
-        children: [
-          {path: "pickup/", element: <PickUp />},
-          {path: "delivery/", element: <Delivery />},
-        ],
       },
     ],
   },
