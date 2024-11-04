@@ -69,7 +69,7 @@ function PaymentSection() {
                 "Pago": "Realizado ✅",
             });
             
-            await sendStripe(dataClient.total, dataClient.Numero);
+            await sendStripe(dataClient, count);
         }
     };
 
