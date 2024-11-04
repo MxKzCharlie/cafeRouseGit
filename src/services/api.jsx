@@ -426,7 +426,6 @@ export const data = [
             ["Pay de Frambuesa", 73],
             ["Pay de Choco.", 73],
             ["Rosca de Choco.", 73],
-            ["Pastel de Creppas(Fresa)", 99],
             ["Chocoflan", 73],
             ["Mocha", 99],
             ["Tres Leches", 99],
