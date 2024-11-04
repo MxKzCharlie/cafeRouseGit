@@ -1,4 +1,4 @@
-export const sendStripe = async (total, numTel) => {
+export const sendStripe = async (dataClient, order) => {
     try {
         const response = await fetch('https://cafe-rouse-backend.vercel.app/api/stripe/create-checkout-session', {
             method: 'POST',
@@ -6,8 +6,8 @@ export const sendStripe = async (total, numTel) => {
              'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                total: total,
-                numTel: numTel,
+                dataClient: dataClient,
+                orderDetails: order,
             }),
         });
 
