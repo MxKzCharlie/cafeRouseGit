@@ -31,8 +31,7 @@ function PaymentSection() {
             ...dataClient,
             ["total"]: total,
         })
-        console.log(dataClient);
-    }, [total, dataClient]);
+    }, [total]);
 
     const handlePaymentPickUp = async (event) => {
         event.preventDefault();
@@ -58,6 +57,7 @@ function PaymentSection() {
                 "Pago": "Pendiente...",
             });
             
+            console.log(dataClient);
             // await sendOrderDelivery(dataClient, count);
             // navigate("/tienda/thankyou/");
         }else{
@@ -70,6 +70,7 @@ function PaymentSection() {
                 "Pago": "Realizado ✅",
             });
             
+            console.log(dataClient);
             // await sendStripe(dataClient, count);
         }
     };
