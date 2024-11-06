@@ -117,10 +117,6 @@ function PaymentSection() {
                         placeholder="Ingrese su Direccion" required
                         type="text" className="inputs-paymentSection" />
                     </label>
-                    <button onClick={() => setCash(0)}
-                    type="submit" className="btn btn-secondary text-light">
-                        Pago en Línea
-                    </button>
                     <button onClick={() => setCash(1)}
                     type="submit" className="btn btn-secondary text-light">
                         Pago en Efectivo
