@@ -47,7 +47,7 @@ function PaymentSection() {
     const handlePaymentDelivery = async (event) => {
         event.preventDefault();
 
-        if(cash){
+        if(cash === 1){
             if(total === 0){
                 return null;
             };
@@ -59,7 +59,7 @@ function PaymentSection() {
             
             await sendOrderDelivery(dataClient, count);
             navigate("/tienda/thankyou/");
-        }else{
+        }else if(cash === 0){
             if(total === 0){
                 return null;
             };
@@ -117,11 +117,11 @@ function PaymentSection() {
                         placeholder="Ingrese su Direccion" required
                         type="text" className="inputs-paymentSection" />
                     </label>
-                    <button onClick={() => setCash(false)}
+                    <button onClick={() => setCash(0)}
                     type="submit" className="btn btn-secondary text-light">
                         Pago en Línea
                     </button>
-                    <button onClick={() => setCash(true)}
+                    <button onClick={() => setCash(1)}
                     type="submit" className="btn btn-secondary text-light">
                         Pago en Efectivo
                     </button>
