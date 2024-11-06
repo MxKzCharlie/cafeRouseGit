@@ -66,7 +66,7 @@ function PaymentSection() {
             
             setDataClient({
                 ...dataClient,
-                "Pago": "Realizado ✅",
+                "Pago": "Realizado...",
             });
             
             await sendStripe(dataClient, count);
