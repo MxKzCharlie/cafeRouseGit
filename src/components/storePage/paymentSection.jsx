@@ -57,8 +57,9 @@ function PaymentSection() {
                 "Pago": "Pendiente...",
             });
             
-            await sendOrderDelivery(dataClient, count);
-            navigate("/tienda/thankyou/");
+            console.log(dataClient);
+            // await sendOrderDelivery(dataClient, count);
+            // navigate("/tienda/thankyou/");
         }else{
             if(total === 0){
                 return null;
@@ -69,7 +70,8 @@ function PaymentSection() {
                 "Pago": "Realizado ✅",
             });
             
-            await sendStripe(dataClient, count);
+            console.log(dataClient);
+            // await sendStripe(dataClient, count);
         }
     };
 
